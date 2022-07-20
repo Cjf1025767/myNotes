@@ -1,0 +1,6 @@
+toggleClass :是否移除或者添加类
+
+not()方法的用法:
+从包含所有段落的集合中删除 id 为 "selected" 的段落：
+
+$("p").not("#selected")

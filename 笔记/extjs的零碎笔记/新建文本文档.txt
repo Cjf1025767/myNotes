@@ -1,0 +1,3 @@
+datefield 
+
+  format: 'Y-m-d ', 用来控制页面上的显示格式

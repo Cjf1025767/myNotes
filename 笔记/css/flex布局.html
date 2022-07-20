@@ -1,0 +1,138 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="utf-8" />  
+        <title>高度充满父容器</title>  
+    </head>  
+    <style>  
+#flex div{flex:1;}
+    </style>  
+  
+    <body>  
+	
+			
+	 <div style=" margin-top:20px;width:1000px;display: flex;">
+	 
+	 <div style="background:black;width:100px">89</div>
+	  <div style="background:black;width:100px">90</div> <div style="background:black;width:100px">91</div>
+	 
+			</div>
+	flex-direction属性
+      		
+	 <div style=" margin-top:20px;width:1000px;flex-direction:row;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			
+			 <div style=" margin-top:20px;width:1000px;flex-direction:row-reverse;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			
+				 <div style=" margin-top:20px;width:1000px;flex-direction:column;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+				 <div style=" margin-top:20px;width:1000px;flex-direction:column-reverse;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			换行
+			 <div style=" margin-top:20px;width:200px;flex-wrap:wrap;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+				 <div style=" margin-top:20px;width:200px;flex-wrap:wrap-reverse;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+							 <div style=" margin-top:20px;width:200px;flex-flow:row wrap;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			
+			justify-content属性
+	center <div style="width:400px; background:yellow; justify-content:center;display: flex;">
+	 
+	 <div style="background:black;width:100px">89</div>
+	 
+			</div>
+							flex-start <div style=" margin-top:20px;width:400px;justify-content:flex-start;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+						flex-end <div style=" margin-top:20px;width:400px;justify-content:flex-end;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			
+					space-between <div style=" margin-top:20px;width:400px;justify-content:space-between;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			
+				space-around <div style=" margin-top:20px;width:400px;justify-content:space-around;display:flex">
+	 
+	 <div style="background:red;width:100px">89</div>
+	  <div style="background:red;width:100px">90</div> <div style="background:red;width:100px">91</div>
+	 
+			</div>
+			
+			
+				align-items:flex-end <div style=" margin-top:20px;width:400px;height:150px;flex-derection:row;display:flex;align-items:flex-end">
+	 
+	 <div style="background:red;width:100px;height:50px">89</div>
+	  <div style="background:red;width:100px;height:70px">90</div> <div style="background:red;width:100px;height:30px">91</div>
+	 
+			</div>
+			
+				align-items:center <div style=" margin-top:20px;width:400px;height:150px;flex-derection:row;display:flex;align-items:center">
+	 
+	 <div style="background:red;width:100px;height:50px">89</div>
+	  <div style="background:red;width:100px;height:70px">90</div> <div style="background:red;width:100px;height:30px">91</div>
+	 
+			</div>
+			
+						
+				align-items:stretch <div style=" margin-top:20px;width:400px;height:150px;flex-derection:row;display:flex;align-items:stretch">
+	 
+	 <div style="background:red;width:100px;height:50px">89</div>
+	  <div style="background:red;width:100px;height:70px">90</div> <div style="background:red;width:100px;height:30px">91</div>
+	 
+			</div>
+			
+			align-items:baseline:项目的第一行文字对齐 <div style=" margin-top:20px;width:400px;height:150px;flex-derection:row;display:flex;align-items:baseline">
+	 
+	 <div style="background:red;width:100px;height:50px;order:4">89</div>
+	  <div style="background:red;width:100px;height:70px">90</div> <div style="background:red;width:100px;height:30px;order:2">91</div>
+	 
+			</div>
+		
+			
+	  </div>
+	  
+	
+    </body>  
+  
+</html>  

@@ -1,0 +1,11 @@
+p, ul, form, div等元素被称为块级元素，这些元素显示为一块儿内容（会自动换行），
+
+span, input 等元素称为行内元素，这两者主要区别就是块级元素会从上到下一个个垂直排列，
+每个自占一行，如下即使两个div之间没任何元素，绿色的div仍然会显示在红色div下方，而不是右方
+
+<div style="height: 100px; width: 100px; background-color: Red;">
+</div>
+<div style="height: 100px; width: 100px; background-color: Green;">
+</div>
+而行内元素在一行中水平排列，行内元素的高度由其内容撑开，不可显示的设置其高度
+，这就是为什么我们一次次的在span上设置height属性不好使的原因。

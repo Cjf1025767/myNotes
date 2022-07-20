@@ -1,0 +1,24 @@
+tree 视图可以根据每行纪录的某字段值不同，设置不同的显示样式
+
+样式主要有以下集中
+
+bf(font-weight:bold)：字体加粗
+it(font-style:italic)：斜体字
+danger：红色字体
+info：蓝色字体
+muted：灰色字体
+primary：紫色字体
+success：绿色字体
+warning：棕色字体
+
+使用方法
+
+ <field name="arch" type="xml">
+       <tree string="" decoration-样式="条件表达式">
+           <field name="用于判断的字段" invisible="1"/>
+           <field name="其他字段"/>
+       </tree>
+ </field>
+————————————————
+版权声明：本文为CSDN博主「Nick Peng」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/PY0312/article/details/113065509

@@ -1,0 +1,1 @@
+用在async修饰的函数里面 用于获取promise对象返回的resolve值 能使promise变成同步

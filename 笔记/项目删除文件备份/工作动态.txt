@@ -1,0 +1,704 @@
+// Ext.define('Tab.view.workbench.workbenchView2', {
+//     extend: 'Ext.panel.Panel',
+//     xtype: 'workbenchView2',
+//     requires: [
+//         'Tab.view.workbench.workbenchViewController',
+//         'Tab.view.workbench.workbenchViewModel',
+//         'Ext.ux.BoxReorderer',
+//     ],
+//     controller: 'workbench-workbenchview',
+//     viewModel: {
+//         type: 'workbench-workbenchview'
+//     },
+//     global: '11',
+//     clientwidth: null,
+//     clientheight: null,
+//     height: 1000,
+//     listeners: {
+//         afterrender: function (grid) {
+//             var weixiushenqingnum = grid.down('*[name="weixiushenqingnum"]');
+//             var html1 = '<div align=center><font size=6 color=red>' + grid.global + '</font></div>';
+//             var html2 = '<div align=center><font size=6 color=green>' + grid.global + '</font></div>';
+//             var html3 = '<div align=center><font size=6 color=black>' + grid.global + '</font></div>';
+//             var html4 = '<div align=center><font size=6 color=#ff0097>' + grid.global + '</font></div>';
+//             var html5 = '<div align=center><font size=6 color=#40de5a>' + grid.global + '</font></div>';
+//             var html6 = '<div align=center><font size=6 color=#4b5cc4>' + grid.global + '</font></div>';
+//             weixiushenqingnum.setHtml(html1);
+//             var daoqitixingnum = grid.down('*[name="daoqitixingnum"]');
+//             daoqitixingnum.setHtml(html2);
+//             var shebeiweixiu = grid.down('*[name="shebeiweixiu"]');
+//             shebeiweixiu.setHtml(html3);
+//             var xunjian = grid.down('*[name="xunjian"]');
+//             xunjian.setHtml(html4);
+//             var pandian = grid.down('*[name="pandian"]');
+//             pandian.setHtml(html5);
+//             var jiliang = grid.down('*[name="jiliang"]');
+//             jiliang.setHtml(html6);
+//             var clientwidth = document.documentElement.clientWidth;
+//             var clientheight = document.documentElement.clientHeight;
+//             // Ext.getCmp('clientwidth').setHeight(clientheight*0.1);
+//             // Ext.getCmp('clientwidth').setWidth(clientheight*0.1);
+//             //Ext.getCmp('qqUserFigure').btnEl.setStyle("background-color", 'pink'); 
+//             // Ext.getCmp('qqUserFigurew').setStyle("background", 'pink'); 
+//             // Ext.getCmp('qqUserFigure').setStyle("bodyStyle", 'paddingLeft:5px;paddingTop:5px'); 
+//             // Ext.getCmp('qqUserFigure').btnInnerEl.setStyle("font-size", '25px');
+//             // Ext.getCmp('qqUserFigure').btnInnerEl.setStyle("color", 'red');
+//             // Ext.getCmp('qqUserFigure').setStyle("border-color", 'pink');
+//             var arrayObj = new Array();
+//             arrayObj = grid.down('fieldset').query('button');
+//             // for (var i = 0; i < arrayObj.length; i++) {
+//             //     arrayObj[i].btnInnerEl.setText(grid.global);
+//             //     arrayObj[i].btnInnerEl.setStyle("color", 'red');
+//             //     arrayObj[i].btnInnerEl.setStyle("font-size", '25px');
+//             //     arrayObj[i].setHeight(clientheight * 0.1);
+//             //     arrayObj[i].setWidth(clientheight * 0.1);
+//             // }
+//         }
+//     },
+//     items: [
+//         {
+//             xtype: 'fieldset',
+//             layout: 'responsivecolumn',
+//             style: {
+//                 background: 'white'
+//             },
+//             items: [
+//                 {
+//                     frame: false,
+//                     userCls: 'big-35 small-35',
+//                     xtype: 'fieldset',
+//                     title: '今日动态',
+//                     style: {
+//                         'background-color': 'white',
+//                     },
+//                     layout: {
+//                         type: 'hbox',
+//                         align: 'middle',
+//                         pack: 'center'
+//                     },
+//                     height: 280,
+//                     items: [
+//                         {
+//                             flex: 1,
+//                             height: '100%',
+//                             xtype: 'container',
+//                             items: [{
+//                                 xtype: 'container',
+//                                 layout: {
+//                                     type: 'vbox',
+//                                     align: 'center',
+//                                     pack: 'center',
+//                                 },
+//                                 height: '100%',
+//                                 width: 150,
+//                                 items: [
+//                                     {
+//                                         flex: 1,
+//                                         xtype: 'component',
+//                                     },
+//                                     {
+//                                         flex: 2,
+//                                         xtype: 'component',
+//                                         html: '<font size=4 color=red>新的维修申请</font>'
+//                                     },
+//                                     {
+//                                         flex: 15,
+//                                         width: '100%',
+//                                         xtype: 'container',
+//                                         listeners: {
+//                                             el: {
+//                                                 click: function () {
+//                                                     alert('ddd')
+//                                                 }
+//                                             }
+//                                         },
+//                                         layout: {
+//                                             type: 'vbox',
+//                                             align: 'center',
+//                                             pack: 'center',
+//                                         },
+//                                         style: {
+//                                             'background-image': 'url(classic/resources/images/qiqiu2.jpg)',
+//                                             'background-repeat': 'no-repeat',
+//                                             'filter': 'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=\'scale\')',
+//                                             '-moz-background-size': '100% 100%',
+//                                             'background-size': '100% 100%'
+//                                         },
+//                                         items: [
+//                                             {
+//                                                 xtype: 'component',
+//                                                 flex: 1
+//                                             },
+//                                             {
+//                                                 width: '100%',
+//                                                 flex: 4,
+//                                                 name: 'weixiushenqingnum',
+//                                                 xtype: 'container',
+//                                                 // 鼠标停留变成手的形状
+//                                                 style: {
+//                                                     cursor: 'pointer'
+//                                                 },
+//                                             },
+//                                         ]
+//                                     },
+//                                 ],
+//                             }
+//                             ],
+//                             layout: {
+//                                 type: 'vbox',
+//                                 align: 'center',
+//                                 pack: 'center',
+//                             },
+//                         },
+//                         {
+//                             flex: 1,
+//                             height: '100%',
+//                             xtype: 'container',
+//                             layout: {
+//                                 type: 'vbox',
+//                                 align: 'center',
+//                                 pack: 'center',
+//                             },
+//                             items: [{
+//                                 xtype: 'container',
+//                                 layout: {
+//                                     type: 'vbox',
+//                                     align: 'center',
+//                                     pack: 'center',
+//                                 },
+//                                 height: '100%',
+//                                 width: 150,
+//                                 items: [
+//                                     {
+//                                         flex: 1,
+//                                         xtype: 'component',
+//                                     },
+//                                     {
+//                                         flex: 2,
+//                                         xtype: 'component',
+//                                         html: '<font size=4 color=green>到期提醒</font>'
+//                                     },
+//                                     {
+//                                         flex: 15,
+//                                         width: '100%',
+//                                         xtype: 'container',
+//                                         layout: {
+//                                             type: 'vbox',
+//                                             align: 'center',
+//                                             pack: 'center',
+//                                         },
+//                                         style: {
+//                                             'background-image': 'url(classic/resources/images/qiqiu5.jpg)',
+//                                             'background-repeat': 'no-repeat',
+//                                             'filter': 'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=\'scale\')',
+//                                             '-moz-background-size': '100% 100%',
+//                                             'background-size': '100% 100%'
+//                                         },
+//                                         items: [
+//                                             {
+//                                                 xtype: 'component',
+//                                                 flex: 1
+//                                             },
+//                                             {
+//                                                 width: '100%',
+//                                                 flex: 3,
+//                                                 name: 'daoqitixingnum',
+//                                                 xtype: 'container',
+//                                                 // 鼠标停留变成手的形状
+//                                                 style: {
+//                                                     cursor: 'pointer'
+//                                                 },
+//                                                 listeners: {
+//                                                     el: {
+//                                                         click: function () {
+//                                                             alert('ddd')
+//                                                         }
+//                                                     }
+//                                                 },
+//                                             },
+//                                         ]
+//                                     },
+//                                 ],
+//                             }
+//                             ],
+//                         },
+//                     ]
+//                 },
+//                 {
+//                     frame: false,
+//                     userCls: 'big-64 small-64',
+//                     xtype: 'fieldset',
+//                     title: '进行中任务',
+//                     style: {
+//                         'background-color': 'white',
+//                     },
+//                     layout: {
+//                         type: 'hbox',
+//                         align: 'middle',
+//                         pack: 'center'
+//                     },
+//                     height: 280,
+//                     items: [
+//                         {
+//                             flex: 1,
+//                             height: '100%',
+//                             xtype: 'container',
+//                             items: [{
+//                                 xtype: 'container',
+//                                 layout: {
+//                                     type: 'vbox',
+//                                     align: 'center',
+//                                     pack: 'center',
+//                                 },
+//                                 height: '100%',
+//                                 width: 150,
+//                                 items: [
+//                                     {
+//                                         flex: 1,
+//                                         xtype: 'component',
+//                                     },
+//                                     {
+//                                         flex: 2,
+//                                         xtype: 'component',
+//                                         html: '<font size=4 color=black>设备维修</font>'
+//                                     },
+//                                     {
+//                                         flex: 15,
+//                                         width: '100%',
+//                                         xtype: 'container',
+//                                         listeners: {
+//                                             el: {
+//                                                 click: function () {
+//                                                     alert('ddd')
+//                                                 }
+//                                             }
+//                                         },
+//                                         layout: {
+//                                             type: 'vbox',
+//                                             align: 'center',
+//                                             pack: 'center',
+//                                         },
+//                                         style: {
+//                                             'background-image': 'url(classic/resources/images/qiqiu6.jpg)',
+//                                             'background-repeat': 'no-repeat',
+//                                             'filter': 'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=\'scale\')',
+//                                             '-moz-background-size': '100% 100%',
+//                                             'background-size': '100% 100%'
+//                                         },
+//                                         items: [
+//                                             {
+//                                                 xtype: 'component',
+//                                                 flex: 1
+//                                             },
+//                                             {
+//                                                 width: '100%',
+//                                                 flex: 4,
+//                                                 name: 'shebeiweixiu',
+//                                                 xtype: 'container',
+//                                                 // 鼠标停留变成手的形状
+//                                                 style: {
+//                                                     cursor: 'pointer'
+//                                                 },
+//                                             },
+//                                         ]
+//                                     },
+//                                 ],
+//                             }
+//                             ],
+//                             layout: {
+//                                 type: 'vbox',
+//                                 align: 'center',
+//                                 pack: 'center',
+//                             },
+//                         },
+//                         {
+//                             flex: 1,
+//                             height: '100%',
+//                             xtype: 'container',
+//                             layout: {
+//                                 type: 'vbox',
+//                                 align: 'center',
+//                                 pack: 'center',
+//                             },
+//                             items: [{
+//                                 xtype: 'container',
+//                                 layout: {
+//                                     type: 'vbox',
+//                                     align: 'center',
+//                                     pack: 'center',
+//                                 },
+//                                 height: '100%',
+//                                 width: 150,
+//                                 items: [
+//                                     {
+//                                         flex: 1,
+//                                         xtype: 'component',
+//                                     },
+//                                     {
+//                                         flex: 2,
+//                                         xtype: 'component',
+//                                         html: '<font size=4 color=#ff0097>巡检</font>'
+//                                     },
+//                                     {
+//                                         flex: 15,
+//                                         width: '100%',
+//                                         xtype: 'container',
+//                                         layout: {
+//                                             type: 'vbox',
+//                                             align: 'center',
+//                                             pack: 'center',
+//                                         },
+//                                         style: {
+//                                             'background-image': 'url(classic/resources/images/qiqiu4.jpg)',
+//                                             'background-repeat': 'no-repeat',
+//                                             'filter': 'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=\'scale\')',
+//                                             '-moz-background-size': '100% 100%',
+//                                             'background-size': '100% 100%'
+//                                         },
+//                                         items: [
+//                                             {
+//                                                 xtype: 'component',
+//                                                 flex: 1
+//                                             },
+//                                             {
+//                                                 width: '100%',
+//                                                 flex: 3,
+//                                                 name: 'xunjian',
+//                                                 xtype: 'container',
+//                                                 // 鼠标停留变成手的形状
+//                                                 style: {
+//                                                     cursor: 'pointer'
+//                                                 },
+//                                                 listeners: {
+//                                                     el: {
+//                                                         click: function () {
+//                                                             alert('ddd')
+//                                                         }
+//                                                     }
+//                                                 },
+//                                             },
+//                                         ]
+//                                     },
+//                                 ],
+//                             }
+//                             ],
+//                         },
+//                         {
+//                             flex: 1,
+//                             height: '100%',
+//                             xtype: 'container',
+//                             items: [{
+//                                 xtype: 'container',
+//                                 layout: {
+//                                     type: 'vbox',
+//                                     align: 'center',
+//                                     pack: 'center',
+//                                 },
+//                                 height: '100%',
+//                                 width: 150,
+//                                 items: [
+//                                     {
+//                                         flex: 1,
+//                                         xtype: 'component',
+//                                     },
+//                                     {
+//                                         flex: 2,
+//                                         xtype: 'component',
+//                                         html: '<font size=4 color=#40de5a>盘点</font>'
+//                                     },
+//                                     {
+//                                         flex: 15,
+//                                         width: '100%',
+//                                         xtype: 'container',
+//                                         listeners: {
+//                                             el: {
+//                                                 click: function () {
+//                                                     alert('ddd')
+//                                                 }
+//                                             }
+//                                         },
+//                                         layout: {
+//                                             type: 'vbox',
+//                                             align: 'center',
+//                                             pack: 'center',
+//                                         },
+//                                         style: {
+//                                             'background-image': 'url(classic/resources/images/qiqiu9.jpg)',
+//                                             'background-repeat': 'no-repeat',
+//                                             'filter': 'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=\'scale\')',
+//                                             '-moz-background-size': '100% 100%',
+//                                             'background-size': '100% 100%'
+//                                         },
+//                                         items: [
+//                                             {
+//                                                 xtype: 'component',
+//                                                 flex: 1
+//                                             },
+//                                             {
+//                                                 width: '100%',
+//                                                 flex: 3,
+//                                                 name: 'pandian',
+//                                                 xtype: 'container',
+//                                                 // 鼠标停留变成手的形状
+//                                                 style: {
+//                                                     cursor: 'pointer'
+//                                                 },
+//                                             },
+//                                         ]
+//                                     },
+//                                 ],
+//                             }
+//                             ],
+//                             layout: {
+//                                 type: 'vbox',
+//                                 align: 'center',
+//                                 pack: 'center',
+//                             },
+//                         },
+//                         {
+//                             flex: 1,
+//                             height: '100%',
+//                             xtype: 'container',
+//                             items: [{
+//                                 xtype: 'container',
+//                                 layout: {
+//                                     type: 'vbox',
+//                                     align: 'center',
+//                                     pack: 'center',
+//                                 },
+//                                 height: '100%',
+//                                 width: 150,
+//                                 items: [
+//                                     {
+//                                         flex: 1,
+//                                         xtype: 'component',
+//                                     },
+//                                     {
+//                                         flex: 2,
+//                                         xtype: 'component',
+//                                         html: '<font size=4 color=#4b5cc4>计量</font>'
+//                                     },
+//                                     {
+//                                         flex: 15,
+//                                         width: '100%',
+//                                         xtype: 'container',
+//                                         listeners: {
+//                                             el: {
+//                                                 click: function () {
+//                                                     alert('ddd')
+//                                                 }
+//                                             }
+//                                         },
+//                                         layout: {
+//                                             type: 'vbox',
+//                                             align: 'center',
+//                                             pack: 'center',
+//                                         },
+//                                         style: {
+//                                             'background-image': 'url(classic/resources/images/qiqiu7.jpg)',
+//                                             'background-repeat': 'no-repeat',
+//                                             'filter': 'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=\'scale\')',
+//                                             '-moz-background-size': '100% 100%',
+//                                             'background-size': '100% 100%'
+//                                         },
+//                                         items: [
+//                                             {
+//                                                 xtype: 'component',
+//                                                 flex: 1
+//                                             },
+//                                             {
+//                                                 width: '100%',
+//                                                 flex: 4,
+//                                                 name: 'jiliang',
+//                                                 xtype: 'container',
+//                                                 // 鼠标停留变成手的形状
+//                                                 style: {
+//                                                     cursor: 'pointer'
+//                                                 },
+//                                             },
+//                                         ]
+//                                     },
+//                                 ],
+//                             }
+//                             ],
+//                             layout: {
+//                                 type: 'vbox',
+//                                 align: 'center',
+//                                 pack: 'center',
+//                             },
+//                         }
+//                     ]
+//                 },
+//             ]
+//         },
+//         {
+//             flex: 5,
+//             margin: '-22 0 0 0',
+//             xtype: 'fieldset',
+//             layout: 'hbox',
+//             title: '工作安排',
+//             style: {
+//                 background: 'white'
+//             },
+//             items: [
+//                 // {
+//                 //     // margin:'0 0 0 50',
+//                 //     flex: 4,
+//                 //     xtype: 'calendar-panel',
+//                 // },
+//                 {
+//                     title: '快速入口',
+//                     xtype: 'fieldset',
+//                     flex: 1,
+//                     layout: {
+//                         type: 'absolute',
+//                     },
+//                     style: {
+//                         background: 'white'
+//                     },
+//                     height: '100%',
+//                     margin: '0 10 0 50',
+//                     layout: 'anchor',
+//                     items: [
+//                         {
+//                             anchor: '80% 20%',
+//                             xtype: 'container',
+//                             layout: {
+//                                 type: 'hbox',
+//                                 align: 'middle',
+//                                 pack: 'center'
+//                             },
+//                             listeners: {
+//                                 el: {
+//                                     click: function () {
+//                                         Ext.app.Application.instance.getMainView().getController().jumpview('device');
+//                                     }
+//                                 }
+//                             },
+//                             items: [
+//                                 {
+//                                     xtype: 'button',
+//                                     ui: 'header-blue',
+//                                     iconCls: 'x-fa fa-desktop',
+//                                 },
+//                                 {
+//                                     style: {
+//                                         cursor: 'pointer'
+//                                     },
+//                                     xtype: 'component',
+//                                     html: '<font size=5 color=red>新&nbsp&nbsp进&nbsp&nbsp设&nbsp&nbsp备</font>'
+//                                 }
+//                             ]
+//                         },
+//                         {
+//                             anchor: '80% 20%',
+//                             xtype: 'container',
+//                             layout: {
+//                                 type: 'hbox',
+//                                 align: 'middle',
+//                                 pack: 'center'
+//                             },
+//                             listeners: {
+//                                 el: {
+//                                     click: function () {
+//                                         Ext.app.Application.instance.getMainView().getController().jumpview('device');
+//                                     }
+//                                 }
+//                             },
+//                             items: [
+//                                 {
+//                                     xtype: 'button',
+//                                     ui: 'header-blue',
+//                                     iconCls: 'x-fa fa-desktop',
+//                                 },
+//                                 {
+//                                     style: {
+//                                         cursor: 'pointer'
+//                                     },
+//                                     xtype: 'component',
+//                                     html: '<font size=5 color=green>设&nbsp&nbsp备&nbsp&nbsp建&nbsp&nbsp档</font>'
+//                                 }
+//                             ]
+//                         },
+//                         {
+//                             anchor: '80% 20%',
+//                             xtype: 'container',
+//                             layout: {
+//                                 type: 'hbox',
+//                                 align: 'middle',
+//                                 pack: 'center'
+//                             },
+//                             listeners: {
+//                                 el: {
+//                                     click: function () {
+//                                         Ext.app.Application.instance.getMainView().getController().jumpview('device');
+//                                     }
+//                                 }
+//                             },
+//                             items: [
+//                                 {
+//                                     xtype: 'button',
+//                                     ui: 'header-blue',
+//                                     iconCls: 'x-fa fa-desktop',
+//                                 },
+//                                 {
+//                                     style: {
+//                                         cursor: 'pointer'
+//                                     },
+//                                     xtype: 'component',
+//                                     html: '<font size=5 color=blue>设&nbsp&nbsp备&nbsp&nbsp建&nbsp&nbsp档</font>'
+//                                 }
+//                             ]
+//                         },
+//                         {
+//                             anchor: '80% 20%',
+//                             xtype: 'container',
+//                             layout: {
+//                                 type: 'hbox',
+//                                 align: 'middle',
+//                                 pack: 'center'
+//                             },
+//                             items: [
+//                                 {
+//                                     xtype: 'button',
+//                                     ui: 'header-blue',
+//                                     iconCls: 'x-fa fa-desktop',
+//                                 },
+//                                 {
+//                                     style: {
+//                                         cursor: 'pointer'
+//                                     },
+//                                     xtype: 'component',
+//                                     html: '<font size=5 color=brown>设&nbsp&nbsp备&nbsp&nbsp建&nbsp&nbsp档</font>'
+//                                 }
+//                             ]
+//                         },
+//                         {
+//                             anchor: '80% 20%',
+//                             xtype: 'container',
+//                             layout: {
+//                                 type: 'hbox',
+//                                 align: 'middle',
+//                                 pack: 'center'
+//                             },
+//                             items: [
+//                                 {
+//                                     xtype: 'button',
+//                                     ui: 'header-blue',
+//                                     iconCls: 'x-fa fa-desktop',
+//                                 },
+//                                 {
+//                                     style: {
+//                                         cursor: 'pointer'
+//                                     },
+//                                     xtype: 'component',
+//                                     html: '<font size=5 color=purple>设&nbsp&nbsp备&nbsp&nbsp建&nbsp&nbsp档</font>'
+//                                 }
+//                             ]
+//                         },
+//                     ],
+//                 }
+//             ],
+//         }
+//     ],
+// });

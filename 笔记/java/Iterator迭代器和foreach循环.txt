@@ -1,0 +1,62 @@
+package main;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+
+public class text {
+
+	public static void main(String[] args) {
+		System.out.println(parseTime("Mon May 06 2019 00:00:00 GMT+0800 (中国标准时间)"));
+		
+		List<String> all = new ArrayList<String>();
+		all.add("a");
+		all.add("b");
+		all.add("c");
+		//all.add("d");
+//		for(String str:all) {
+//			if("b".equals(str)){
+//				//all.remove(str);//foreach循环的本质是调用Iterator迭代器循环
+//				all.remove(str);
+//			}else{
+//				System.out.println( str+"===");
+//			}
+//			
+//		}
+				
+		Iterator<String> iterator = all.iterator();//实例化迭代器
+				//hasNext()方法的判断依据是光标等于元素个数是返回false否则true
+		while(iterator.hasNext()){
+			String str=iterator.next();//读取当前集合数据元素
+			if("b".equals(str)){
+				//all.remove(str);//使用集合当中的remove方法对当前迭代器当中的数据元素值进行删除操作(注:此操作将会破坏整个迭代器结构)使得迭代器在接下来将不会起作用
+				iterator.remove();
+			}else{
+				System.out.println( str+" ");
+			}
+		}
+		System.out.println("\n删除\"b\"之后的集合当中的数据为:"+all);
+		
+		
+	}
+	public static String parseTime(String datdString) {
+	    datdString = datdString.replace("GMT", "").replaceAll("\\(.*\\)", "");
+	    //将字符串转化为date类型，格式2016-10-12
+	    SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd yyyy HH:mm:ss z", Locale.ENGLISH);
+	    Date dateTrans = null;
+	    try {
+	        dateTrans = format.parse(datdString);
+	        return new SimpleDateFormat("yyyy-MM-dd").format(dateTrans);
+	    } catch (ParseException e) {
+	        e.printStackTrace();
+	    }
+	    return datdString;
+
+	}
+}

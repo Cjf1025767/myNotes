@@ -1,0 +1,1 @@
+ raise UserError(_('The regex is not valid'))

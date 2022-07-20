@@ -1,0 +1,13 @@
+from datetime import date, datetime
+import pytz
+tz = pytz.timezone('Asia/Shanghai')
+tz2 = pytz.timezone('UTC')
+now_time = str(datetime.utcnow())
+today=now_time[0:10]
+time=now_time[11:19]
+print(now_time)
+print(today)
+print(time)
+print(datetime.now(tz))
+print(datetime.now(tz2))
+print(date.today())

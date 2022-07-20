@@ -1,0 +1,30 @@
+ xtype: 'gridpanel',
+                            listeners: {
+                                celldblclick: function (grid, rowIndex, columnIndex, e) {
+                                    if (columnIndex == 11) {
+                                        var window = Ext.create('Ext.Window', {
+                                            width: 400,
+                                            height: 300,
+                                            minHeight: 300,
+                                            minWidth: 200,
+                                            maximizable: true,
+                                            title: '图片大图',
+                                            layout: "fit", //窗口布局类型
+                                            modal: true, //是否模态窗口，默认为false
+                                            resizable: false,
+                                            closeAction: 'hide',
+                                            plain: true,
+                                            draggable: true,
+                                            border: false,
+                                            items: [
+                                                Ext.create('Ext.Img', {
+                                                    height: 200,
+                                                    width: 300,
+                                                    src: e.data.formSigning,
+                                                })
+                                            ]
+                                        })
+                                        window.show();
+                                    }
+                                }
+                            },

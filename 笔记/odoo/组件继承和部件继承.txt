@@ -1,0 +1,10 @@
+组件component  class xx extends xxx{
+ constructor() {
+            super(...arguments);
+            this.model = useModel('searchModel');
+        } 
+}
+
+部件 widget var xxx= xxx.extend({
+init:function(){}
+})

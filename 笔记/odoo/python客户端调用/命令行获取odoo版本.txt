@@ -1,0 +1,4 @@
+>> from xmlrpc import client
+>>> server='http://127.0.0.1:8069'
+>>> ser_pro=client.ServerProxy('%s/xmlrpc/2/common'%server)
+>>> ser_pro.version();

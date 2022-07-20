@@ -1,0 +1,17 @@
+  const f1 = async () => {
+    const p = new Promise((resolv, reject)  => {
+    setTimeout(() => {
+      alert('我是异步')
+      resolv('resolv')
+    }, 2000);
+  })
+    let res = await p;
+  alert("res", res);
+}
+
+const f2 = () => {
+    alert('我是f2')
+}
+
+f1();
+f2();

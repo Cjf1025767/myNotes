@@ -1,0 +1,50 @@
+  GetTimess(starttime, endtime) {
+      //通过开始时间和结束时间计算时长
+      return function(starttime, endtime) {
+        if (endtime == null || endtime == undefined || endtime == 0) {
+          return 0
+        }
+        var startdate = new Date(starttime.replace(/-/, '/'))
+        var enddate = new Date(endtime.replace(/-/, '/'))
+        var starttimes = startdate.getTime()
+        var endtimes = enddate.getTime()
+        var seconds = parseInt(endtimes - starttimes) / 1000
+        var _addZero = function(time) {
+          let str = time
+          if (time < 10) {
+            str = '0' + time
+          }
+          return str
+        }
+        var changeTimeBySecond = function(second) {
+          var hourTime = 0
+          var minuteTime = 0
+          var secondTime = 0
+          if (second > 60) {
+            //如果秒数大于60
+            minuteTime = Math.floor(second / 60)
+            secondTime = Math.floor(second % 60)
+            if (minuteTime >= 60) {
+              //如果分钟大于60
+              hourTime = Math.floor(minuteTime / 60)
+              minuteTime = Math.floor(minuteTime % 60)
+            } else {
+              hourTime = 0
+            }
+          } else {
+            hourTime = 0
+            minuteTime = 0
+            if (second == 60) {
+              //如果秒数等于60
+              minuteTime = 1
+              secondTime = 0
+            } else {
+              secondTime = second
+            }
+          }
+          var timeResult = _addZero(hourTime) + ':' + _addZero(minuteTime) + ':' + _addZero(secondTime)
+          return timeResult
+        }
+        return changeTimeBySecond(seconds)
+      }
+    },

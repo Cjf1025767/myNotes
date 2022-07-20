@@ -1,0 +1,39 @@
+1两个竖直方向的盒子相遇时，其竖直方向的距离等于上方盒子的下外边距和下方盒子的上外边距中较大的一个。
+2, 两个水平方向的盒子相遇，那么最终两者之间的距离为左边盒子的右外边距和右边盒子的做外边距之和。
+3,　另外一个有趣的例子就是：假设有一个元素同时设置了margin-top和margin-bottom，但是内容为空，那么这两个margin值也会叠加，值为两者最大的一个，它类似与竖直方向上两个盒子margin值的叠加。代码如下：
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平方向的两个盒子</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+ 
+        .top{
+            width: 500px;
+            height: 100px;
+            background: red;
+        }
+        .middle{
+            margin-top: 100px;
+            margin-bottom:50px;
+        }
+        .footer{
+            width: 500px;
+            height: 100px;
+            background: green;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="top">div-top</div>
+    <div class="middle"></div>
+    <div class="footer">div-buttom</div>
+</body>
+</html>发现div-top和div-buttom之间的距离为100px
+4百分比margin的值是相对于父容器的宽度
+无论是margin-left还是margin-top都是相对父容器的宽度

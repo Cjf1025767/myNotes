@@ -1,0 +1,30 @@
+进入odoo安装目录运行一下命令
+python -m debugpy --listen 0.0.0.0:5678 --wait-for-client odoo-bin -c odoo.conf
+
+打开vscode添加python调试
+launch.json中 {
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 远程连接",
+            "type": "python",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5678
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "H:/odoo/anzhuang/server",
+                    "remoteRoot": "H:/odoo/anzhuang/server"
+                }
+            ]
+        }
+    ]
+}
+
+然后vscode中启动python调试
+

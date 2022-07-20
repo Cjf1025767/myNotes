@@ -1,0 +1,13 @@
+在本例中，person 的 fullName 方法被应用到 person1：
+
+实例
+var person = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+var person1 = {
+    firstName: "Bill",
+    lastName: "Gates",
+}
+person.fullName.apply(person1);  // 将返回 "Bill Gates"

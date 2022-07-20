@@ -1,0 +1,1 @@
+1获取main对象和mainController对象：Ext.app.Application.instance.getMainView().getController()

@@ -1,0 +1,3 @@
+getpbxconfig配置 从数据库s_yf_pbx中读取crmserver的url
+
+main.php 中的 public static $site_URL = 'http://127.0.0.1:5555/'; 配置的url要和nginx配置的的url一致

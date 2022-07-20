@@ -1,0 +1,3 @@
+path环境变量，操作系统查找可执行文件的目录
+
+classpath环境变量，java.exe查找class文件的目录

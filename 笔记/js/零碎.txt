@@ -1,0 +1,28 @@
+(function(a){
+console.log(a)
+})//仅仅申明一个方法
+(function(a){
+console.log(a)
+})(11)//申明并且执行这个方法，控制台输出结果11
+
+js里面用window.a申明变量是全局变量比如:
+
+ a=555;
+console.log(window.a)输出结果555
+
+window.b=666
+console.log(b)输出结果666
+
+
+//删除数组确定元素但不知道下标的方法
+
+// var remove = function(obj, arr) {
+      //   const objToStr = JSON.stringify(obj)
+      //   for (var i = 0; i < arr.length; i++) {
+      //     const objToStr2 = JSON.stringify(arr[i])
+      //     if (objToStr == objToStr2) {
+      //       arr.splice(i, 1)
+      //     }
+      //   }
+      // }
+

@@ -1,0 +1,56 @@
+  <record id="digest_digest_action" model="ir.actions.act_window">
+        <field name="name">Digest Emails</field>
+        <field name="res_model">digest.digest</field>
+        <field name="search_view_id" ref="digest_digest_view_search"/>
+    </record>
+
+name=res_model在动作中关联搜索视图
+
+
+      <record id="res_partner_view_search_inherit_mail" model="ir.ui.view">
+            <field name="name">res.partner.view.search.inherit.mail</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                    <filter name="inactive" position="after">
+                        <separator />
+                        <filter string="My Activities" name="activities_my"
+                                domain="[('activity_ids.user_id', '=', uid)]"/>
+                        <separator/>
+                        <filter string="Late Activities" name="activities_overdue"
+                                domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                                help="Show all records which has next action date is before today"/>
+                        <filter string="Today Activities" name="activities_today"
+                                domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                        <filter string="Future Activities" name="activities_upcoming_all"
+                                domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
+                        ]"/>
+                        <separator/>
+                    </filter>
+            </field>
+        </record>
+
+<field name="inherit_id" ref="base.view_res_partner_filter"/>
+扩展搜索视图  ref=搜索视图的id
+
+
+
+
+  综上，搜索视图的过滤条件制定有2种方式：第二种可以考虑作为来电显示联系人
+    1）通过filter的domain属性。表达式的值：
+
+       a）可以是具体的明确值；
+
+       b）可以是python运算表达式(不过不能取具体记录字段值，可以是python语言本身的一些库函数调用的运算表达式)。
+
+       c）可以是一个变量名，变量值则通过context来赋予。一般用于制定默认搜索条件，在context中传递key:value。
+
+<filter name="" string=""
+        domain="[('字段', '比较运算符', 值[值可以是具体的明确值；也可以是python运算表达式(不过不能取具体记录字段值，可以是python语言本身的一些库函数调用的运算表达式)]))]"/>
+    2）通过action的domain字段：action中的domain表达式，会在跳转时自动应用
+
+       <record id="action_" model="ir.actions.act_window">
+            <field name="name"></field>
+            <field name="res_model"></field>
+            <field name="domain">[(表达式)]</field>
+        </record>

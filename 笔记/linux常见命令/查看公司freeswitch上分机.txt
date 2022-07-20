@@ -1,0 +1,5 @@
+ /usr/local/freeswitch/bin/fs_cli
+
+callcenter_config
+
+callcenter_config agent list

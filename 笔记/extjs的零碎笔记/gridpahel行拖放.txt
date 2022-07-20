@@ -1,0 +1,9 @@
+  viewConfig: {
+ 
+    plugins: {
+        ptype: "gridviewdragdrop",
+        dragText: "可用鼠标拖拽进行上下排序"
+    }
+  },
+
+在gridpanel里面可以加监听事件获取拖放行和目标行

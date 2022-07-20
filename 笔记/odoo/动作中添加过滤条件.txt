@@ -1,0 +1,8 @@
+  <record id="tab_phone.mainwindow" model="ir.actions.act_window">
+            <field name="name">Kanban</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('phone', 'ilike', '13701806449')]</field>
+        </record>
+
+直接获取号码为13701806449的联系人

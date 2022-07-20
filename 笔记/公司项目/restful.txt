@@ -1,0 +1,34 @@
+	server.addRestConfig(new tab.RestResourceConfig(), sUrlNumPrefix + "/tab", true);
+
+
+
+public class RestResourceConfig extends ResourceConfig {
+	public RestResourceConfig(){	
+		register(tab.rest.CalloutServer.class);
+		register(tab.rest.CrmInterface.class);
+		register(tab.rest.ReportServer.class);
+		register(CustomLoggingFilter.class);
+		register(com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider.class);
+		register(org.glassfish.jersey.jetty.JettyHttpContainerProvider.class);
+		register(org.glassfish.jersey.media.multipart.MultiPartFeature.class);
+		register(tab.rest.VPInterface.class);
+		switch(Runner.nJerseyLogLevel){
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			property(org.glassfish.jersey.server.ServerProperties.TRACING, "OFF");
+			property(org.glassfish.jersey.logging.LoggingFeature.LOGGING_FEATURE_LOGGER_LEVEL, "INFO");
+			break;
+		case 3:
+			property(org.glassfish.jersey.server.ServerProperties.TRACING, "ON_DEMAND");
+			property(org.glassfish.jersey.logging.LoggingFeature.LOGGING_FEATURE_LOGGER_LEVEL, "WARNING");
+			break;
+		default:
+			property(org.glassfish.jersey.server.ServerProperties.TRACING, "ALL");
+			property(org.glassfish.jersey.logging.LoggingFeature.LOGGING_FEATURE_LOGGER_LEVEL, "SEVERE");
+			break;
+		}
+	}
+}

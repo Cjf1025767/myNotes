@@ -1,0 +1,18 @@
+	webClient = new $.JsonRpcClient({
+					login: extension,
+					passwd: fspasswd,
+					socketUrl: cmserver + "/chat/?extension=" + extension,
+					onmessage: onAgentMessage,
+					onclose: function () {
+						webClient = null;
+					}
+				});
+
+前端连接后端代码 socketUrl: 为后端websocket的url
+
+后端配置代码
+	public static tab.jetty.WebServer server;
+server.addWebSocketServlet(new ChatWebSocketServlet(), "/chat");
+
+@ClientEndpoint(subprotocols="CHAT"
+subprotocols: 为字符串数组，表示支持的子协议名称列表

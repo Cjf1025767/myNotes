@@ -1,0 +1,39 @@
+1.Ext.String.htmlEncode(value);　　编码字符串，对其中特殊字符进行转义
+
+xt.String.htmlEncode("hello'world");    //"hello&#39;world"
+2.Ext.String.htmlDecode(value);　　解码字符串，对其中的转义字符进行还原
+
+Ext.String.htmlDecode("hello&#39;world");    //"hello'world"
+3.Ext.String.urlAppend(url,string)　　追加内容到查询字符中，?相连
+
+Ext.String.urlAppend("www.baidu.com","a=1");    //"www.baidu.com?a=1"
+4.Ext.String.trim(string)　　去掉字符串开头和结尾位置的空格
+
+Ext.String.trim(" hello world ");    //"hello world"
+5.Ext.String.capitalize(string)　　首字母大写
+
+Ext.String.capitalize("hello");    //"Hello"
+6.Ext.String.ellipsis(value,length,word)　　截断字符串并在结尾处添加省略号 　value 原始字符串 length 保留长度 word 设置为true则试图保留完整单词
+
+复制代码
+Ext.String.ellipsis("my name is shi",3,false);    //"..."
+Ext.String.ellipsis("my name is shi",3,true);    //"..."
+Ext.String.ellipsis("my name is shi",6,false);    //"my ..."
+Ext.String.ellipsis("my name is shi",6,true);    //"my..."
+Ext.String.ellipsis("my name is shi",8,false);    //"my na..."
+Ext.String.ellipsis("my name is shi",8,true);    //"my..."
+复制代码
+7.Ext.String.escapeRegex(string)　　将原始字符串中的-.*+?^${}()[]\进行替换
+
+Ext.String.escapeRegex("hello -.*+?^${}()[]");    //"hello \-\.\*\+\?\^\$\{\}\(\)\[\]"
+8.Ext.String.toggle(string,value,other)　　对比两个字符串是否相等，相等返回other，不相等返回value
+
+Ext.String.toggle("abc","abc","相等");    //"相等"
+Ext.String.toggle("abc","cba","相等");    //"cba"
+9.Ext.String.leftPad(string,size,[character])　 在字符串左边填充指定字符串
+
+Ext.String.leftPad("12 3",5,"0000");    //"000012 3"
+10.Ext.String.format(string,value1,value2)　　定义带标记的字符串，并用传入的字符替换标记。 每个标记必须是唯一的，而且必须要像{0},{1}...{n}这样地自增长
+
+var cls = 'my-class', text = 'Some text';
+Ext.String.format('<div class="{0}">{1}</div>', cls, text);    //'<div class="my-class">Some text</div>'

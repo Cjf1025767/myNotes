@@ -1,0 +1,29 @@
+ 
+    'depends': [
+        'base_setup',
+        'mail',
+        'utm',
+        'rating',
+        'web_tour',
+        'web_cohort',
+        'resource',
+        'portal',
+        'digest',
+    ],
+
+_inherit = ['portal.mixin', 'mail.thread.cc', 'utm.mixin', 'rating.mixin', 'mail.activity.mixin']
+
+
+   user_id = fields.Many2one(
+        'res.users', string='Assigned to', 
+        readonly=False, tracking=True
+      )
+
+
+ <div class="oe_chatter">
+                <field name="message_follower_ids"/>
+                <field name="activity_ids"/>
+                <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+            </div>
+字段上加tracking=True表示对字段进行跟踪,字段有变化会有对应消息
+

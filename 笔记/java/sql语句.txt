@@ -1,0 +1,14 @@
+ 1,根据旧表创建新表:
+正确的方法是 select * into newtable from oldtable; 如果不想导记录，只想生成表结构 :select * into newtable from oldtable where 1=2;
+
+在新建临时表时，如果一次性插入数据量很大，那么可以使用 select into 代替 create table，避免造成大量 log ，	
+以提高速度；如果数据量不大，为了缓和系统表的资源，应先create table，然后insert。
+
+
+2,创建索引：create  
+NONCLUSTERED（//这里是索引类别UNIQUE，主键索引，CLUSTERED，聚集索引，NONCLUSTERED，非聚集索引）
+ index idxname on callagentrecord(agent)
+删除索引：drop index idxname
+
+3，union联合结果集，返回的是唯一的值，如果是union all则返回所有的
+前后两个select集合对应的字段要对应起来，返回类型要一致，字段数量也要一致

@@ -1,0 +1,9 @@
+ExtJS的在button里，打开新的Tab页面，下面两个属性就可以 
+href: '/Rbac/index.html',
+hrefTarget: '_blank',
+
+href: '/Rbac/index.html':这是打开窗口的新地址
+
+hrefTarget: '_blank',
+
+

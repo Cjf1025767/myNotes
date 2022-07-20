@@ -1,0 +1,31 @@
+应用场景：用于前端j提交动态的form表单 （name为动态不能使用submit提交表单的情况）
+
+1.定义一个键值对对象
+function ObjData(key,value){
+this.Key=key;
+this.Value=value;
+}
+
+2.在点击表单的提交buttom的方法中：
+var list=document.getElementById("myForm").getElementsByTagName("input");//查询form下的所有input标签
+var array=[]; //定义一个对象数据 存放每一个input的键值对（input中“name”为key,“value”为value）
+ 
+for(var i=0;i<list.length && list[i];i++) //对表单中所有的input进行遍历
+{
+      //判断不是空的 input,进行表单提交 
+      if(list[i].value!="" || list[i].value!=null)   
+      {
+      
+           var key=list[i].name;
+           var value=list[i].value;
+           var s=new ObjData(key,value); //创建键值对象
+           array.push(s); //把对象放入对象数组中
+      }
+}
+
+
+
+
+
+3.把数组转换成json字符串
+var postData =  JSON.stringify(array); 

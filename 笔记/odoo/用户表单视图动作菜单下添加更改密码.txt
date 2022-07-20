@@ -1,0 +1,9 @@
+  <record id="change_password_wizard_action2" model="ir.actions.act_window">
+            <field name="name">Change Password2</field>
+            <field name="res_model">change.password.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="base.model_res_users"/>
+        </record>
+
+

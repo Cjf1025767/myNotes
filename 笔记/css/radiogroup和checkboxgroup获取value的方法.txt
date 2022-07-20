@@ -1,0 +1,102 @@
+radiogroup:
+     {
+                                            width: 500,
+                                            margin: '0 0 0 20',
+                                            ui: 'textfield-laber-top',
+                                            name: 'yanshoucaozuo',
+                                            xtype: 'radiogroup',
+                                            fieldLabel: '验收操作',
+                                            // Arrange radio buttons into two columns, distributed vertically
+                                            columns: 4,
+                                            vertical: true,
+                                            items: [
+                                                // { boxLabel: '报废', name: 'rb', inputValue: '报废' },
+                                                // { boxLabel: '重新维修', name: 'rb', inputValue: '重新维修' },
+                                                // { boxLabel: '维修完成', name: 'rb', inputValue: '维修完成' },
+                                                { boxLabel: '强制完成', name: 'rb', inputValue: '强制完成' },
+                                            ]
+                                        },
+ var values = this.up().down('radiogroup').getValue().rb;
+           var caozuo=this.up().down('radiogroup').getChecked()[0].inputValue;
+
+fieldset(checkbox):
+ {
+ 2                 xtype: 'fieldset',
+ 3                 title: '兴趣',
+ 4                 autoHeight: true,
+ 5                 defaultType: 'checkbox',
+ 6                 hideLabels: true,
+ 7                 id: 'xq',
+ 8                 layout: 'hbox',
+ 9                 defaults: {
+10                     flex: 1
+11                 },
+12                 //vertical: false,
+13                 items: [
+14                     { boxLabel: '游泳', name: 'xqn', inputValue: '4', checked: true },
+15                     { boxLabel: '玩儿', name: 'xqn', inputValue: '5' },
+16                     { boxLabel: '游戏', name: 'xqn', inputValue: '6' }
+17                 ]
+18 }
+
+ //获取通过fieldset定义的checkbox值 
+2                     var xqCheck = Ext.getCmp('xq').items;
+3                     var xq = '';
+4                     for(var i = 0; i < xqCheck.length; i++){
+5                         if(xqCheck.get(i).checked){
+6                             xq += '+' + xqCheck.get(i).boxLabel;
+7                         }
+8                     }
+9                     Ext.MessageBox.alert('提示', '您的兴趣是' + xq);
+
+checkboxgroup:
+{
+ 2                 xtype: 'checkboxgroup',
+ 3                 fieldLabel: 'Hobby',
+ 4                 id: 'hobby',
+ 5                 columns: 2,
+ 6                 vertical: true,
+ 7                 items: [
+ 8                     { boxLabel: 'music', name: 'rb', inputValue: '1', checked: true },
+ 9                     { boxLabel: 'sport', name: 'rb', inputValue: '2' },
+10                     { boxLabel: 'draw', name: 'rb', inputValue: '3' }
+11                 ]
+12 }
+
+ //获取通过checkboxgroup定义的checkbox值
+2                     var hobbyValue = Ext.getCmp('hobby').getChecked();
+3                     var hobby;
+4                     Ext.Array.each(hobbyValue, function(item){
+5                         hobby += '+' + item.boxLabel;
+6                     });
+7                     Ext.MessageBox.alert('提示', '您的兴趣是' + hobby);
+
+fieldset(radio):
+{
+ 2                 xtype: 'fieldset',
+ 3                 id: 'job',
+ 4                 title: '职业',
+ 5                 autoHeight: true,
+ 6                 defaultType: 'radio',  //设置fieldset内的默认元素为radio
+ 7                 //hideLabel: false,
+ 8                 layout: 'hbox',
+ 9                 defaults: {
+10                     flex: 1
+11                 },
+12                 items: [
+13                     { boxLabel: '学生', name: 'job', inputValue: '1', checked: true },
+14                     { boxLabel: '教师', name: 'job', inputValue: '2' },
+15                     { boxLabel: '其他', name: 'job', inputValue: '3' }
+16                 ]
+17 }
+
+   var jobRadio = Ext.getCmp('job').items;
+ 2                     var jobValue = loginForm.getForm().findField("job").getGroupValue(); //此处获取到的是inputValue的值
+ 3                     var job;
+ 4                     for(var i = 0; i < jobRadio.length; i++){
+ 5                         if(jobRadio.get(i).inputValue == jobValue){
+ 6                             job = jobRadio.get(i).boxLabel;
+ 7                             break;
+ 8                         }
+ 9                     }
+10                     Ext.MessageBox.alert('提示', '您的职业是' + job);

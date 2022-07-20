@@ -1,0 +1,4 @@
+重新开一个cmd窗口 
+然后
+python odoo-bin shell -c odoo.conf -d 20210525
+self.env['ir.module.module'].search([('name', 'like', 'tab_phone')]).button_immediate_uninstall()

@@ -1,0 +1,4 @@
+数组
+    var newcallarrays=this.callArrays.slice(0);
+对象
+var newobj = $.extend(true, {}, obj) 

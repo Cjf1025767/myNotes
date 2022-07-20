@@ -1,0 +1,14 @@
+extjs控件有两个属性：一个是iconCls；另一个是icon。通过这两个属性可以对控件添加图标
+
+1.直接引用图标路径
+
+icon: '../icons/application_view_detail.png',//引用图标
+ 
+2.通过css文件调用图标
+
+css文件代码：
+
+.Applicationviewdetail{background-image:url(../icons/application_view_detail.png)!important;}
+js文件中调用代码：
+
+iconCls: "Applicationviewdetail",//引用样式

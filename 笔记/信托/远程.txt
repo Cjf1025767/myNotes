@@ -1,0 +1,17 @@
+看日志:
+运行H:\php\frpc\Frpc 下的三个文件
+远程桌面127.0.0.1:6000
+
+看日志和操作jar包:
+用winscp 操作jar包用putty(在堡垒机上配置这两个程序的路径)
+
+看数据库：连接window.78
+
+远程测试机：
+运行H:\php\frpc\Frpc 下的run_frpc_chenzy.cmd
+远程桌面127.0.0.1:6000 账号密码是 administrator/Chenguan02! 
+然后远程 192.168.52.149
+然后用winscp连接192.168.52.134
+
+
+

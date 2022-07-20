@@ -1,0 +1,2 @@
+window命令行查询表:
+进入数据库的bin目录:psql -U openpg -d odoo -c  "select * from calendar_alarm"

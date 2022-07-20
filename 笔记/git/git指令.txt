@@ -1,0 +1,27 @@
+
+
+git add 文件名 修改文件加到暂存区
+git commit  -m'提交信息'  提交到本地仓库(提交之前必须要先加到暂存区，提交信息不可缺)
+git reset --hard HEAD^ 回退到上一个版本(不管你这次有没有做修改) git reset --hard HEAD^回退到上两个版本
+git reset --hard HEAD~100 回退到上一百个版本
+
+撤销某个文件的更改(只能撤销未添加到暂存区的代码(git add 文件名))
+$ git checkout -- 文件名
+git log  查看提交日志
+
+git reflog 查看所有的操作版本号
+
+例如下: 版本号就是最左边的编码
+f92c3a1 HEAD@{0}: reset: moving to HEAD^
+b9746eb HEAD@{1}: reset: moving to HEAD^
+cf33d07 HEAD@{2}: commit: dddddd
+b9746eb HEAD@{3}: commit: ceshixiugai
+f92c3a1 HEAD@{4}: reset: moving to HEAD^
+1b21f91 HEAD@{5}: commit: 滴滴
+f92c3a1 HEAD@{6}: commit (initial): readme.txt提交
+
+git reset  --hard 版本号 回退到指定版本（可以是向前也可以向后）
+
+cat 文件名 查看文件内容
+
+

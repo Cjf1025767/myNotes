@@ -1,0 +1,9 @@
+      core.bus.trigger('do-action', {
+          action: {
+              name: 'name',
+              type: 'ir.actions.act_window',
+              res_model: 'mail.channel',
+              views: [[false, 'kanban'], [false, 'form']],
+              domain: [['public', '!=', 'private']]
+          },
+      });

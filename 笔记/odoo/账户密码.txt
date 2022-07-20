@@ -1,0 +1,7 @@
+本地odoo系统 账号: odoo@qq.com 密码mingyi  账号admin  密码admin
+posegreSQL数据库登录账号：openpg         密码:openpgpwd
+远程192.168.8.218密码:123qwe!@#
+
+
+
+ 

@@ -1,0 +1,6 @@
+                        try:
+                            object
+                        except NameError:
+                             object
+                        else:   
+		这里继续执行代码

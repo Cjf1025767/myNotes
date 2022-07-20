@@ -1,0 +1,2 @@
+本地电脑开通socks5隧道
+git上在setting /netword下面配置代理

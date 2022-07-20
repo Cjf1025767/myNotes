@@ -1,0 +1,45 @@
+		hql
+指定列查询:
+
+String sql = "select new Equipment(name) from Equipment where name='44'" ;
+Query query = session.createQuery(sql);
+		List<Equipment> list = new ArrayList<Equipment>();
+		list =query.list();
+前提是Equipment类中有无参构造器和以name为参数的构造器，这样的好处是得到的集合是Equipment集合而不是Object集合
+
+条件查询:
+
+无名称参数  from customer where name = ?
+
+对其进行赋值 query.setParameter(0,”张三”);
+
+有名称参数  from customer where name = :myname;
+
+对其进行赋值 query.setParameter(“myname”,”李四”);
+
+本地sql：
+addEntity方法将结果封装到指定对象，如果不封装，得到的是list<Objevt[]>
+下面代码是两表关联查询
+sql="select eq.*,ev.* from equipment as eq inner join eventlist as ev on eq.name=ev.equipment_name";
+		List list2=session.createSQLQuery(sql).addEntity("eq",Equipment.class).addEntity("ev",Eventlist.class).list();
+		List<Object[]> obj=(List<Object[]>) list2;
+		for(int i=0;i<obj.size();i++) {
+			Equipment eq=(Equipment) obj.get(i)[0];
+			Eventlist ev=(Eventlist) obj.get(i)[1];
+			System.out.println(eq.getName());
+			System.out.println(ev.getEventStyle());
+		}
+sql语句中的having count的用法
+group by id
+having count(*)>2
+-- 以id分组统计，查询分组后数量大于2的id和数量
+
+
+
+
+
+
+
+
+
+

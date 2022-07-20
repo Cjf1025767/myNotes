@@ -1,0 +1,6 @@
+tabpanel组件自带的setActiveTab()方法参数可以是PARAMETERS
+card :  String/Number/Ext.Component
+
+The card to make active. Either an ID, index or the component itself.
+
+调用者是tabpanel本身

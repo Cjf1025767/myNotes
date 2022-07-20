@@ -1,0 +1,4 @@
+呼叫中心模块，若要运行它的webroot界面需要配置 rbacserver apid(ruacserver的appid) sercet （由rbacserver鉴权获取） nodename（只要是唯一的就行）
+extjs 编译命令进入webroot/standardVersion sencah app build -dev classic
+
+ 

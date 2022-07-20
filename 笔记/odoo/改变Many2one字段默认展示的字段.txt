@@ -1,0 +1,8 @@
+  @api.multi
+  def name_get(self):
+    result = []
+    for book in self:
+      authors = book.author_ids.mapped('name')
+      name = '%s (%s)' % (book.name, ', '.join(authors))
+      result.append((book.id, name))
+    return result

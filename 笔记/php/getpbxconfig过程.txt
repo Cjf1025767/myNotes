@@ -1,0 +1,6 @@
+store中调用php的接口(getChatConfig) 将返回的config信息存进store
+
+config.pbxconfig是通过调用phop中的getPbxConfig方法
+
+getPbxConfig 方法调用了tabcallcenter的java方法getPbxConfig
+
