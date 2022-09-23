@@ -1,0 +1,14 @@
+   .do_action(
+                  {
+                    type: "ir.actions.act_window",
+                    res_model: "helpdesk.ticket",
+                    name: "来电弹屏",
+                    view_mode: "form",
+                    res_id:helpdeskticketid,
+                    views: [[false, "form"]],
+                    target: "current",  flags: {mode: 'edit'},
+                  },
+                  {
+                    clear_breadcrumbs: false,
+                  }
+                )
